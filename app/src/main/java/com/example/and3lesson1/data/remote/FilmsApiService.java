@@ -34,7 +34,7 @@ public class FilmsApiService {
         App.api.getDetailFilms(id).enqueue(new Callback<Film>() {
             @Override
             public void onResponse(Call<Film> call, Response<Film> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.isSuccessful()) {
                     myDetailCallBack.success(response.body());
                 } else if (response.code() > 500) {
                     myDetailCallBack.onServerError();

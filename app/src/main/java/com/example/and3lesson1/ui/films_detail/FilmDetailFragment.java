@@ -50,8 +50,9 @@ public class FilmDetailFragment extends Fragment {
                 public void success(Film film) {
                     binding.tvDetailDescription.setText(film.getDescription());
                     binding.tvFilmDetailId.setText(film.getId());
+                    Log.e("a", "success: "+ film.getDescription() );
                     binding.tvDetailTitle.setText(film.getTitle());
-                    binding.tvDetailReleaseDate.setText(film.getRelease_Date());
+                    binding.tvDetailReleaseDate.setText(String.valueOf(film.getRelease_Date()));
                 }
 
                 @Override

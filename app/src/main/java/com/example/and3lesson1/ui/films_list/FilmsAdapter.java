@@ -45,7 +45,6 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
 
     public class FilmsViewHolder extends RecyclerView.ViewHolder {
         private ItemFilmBinding binding;
-        public OnItemClickListener listener;
 
         public FilmsViewHolder(@NonNull ItemFilmBinding binding) {
             super(binding.getRoot());
@@ -55,7 +54,8 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         public void onBind(Film film) {
             binding.tvTitle.setText(film.getTitle());
             binding.tvDescription.setText(film.getDescription());
-            itemView.setOnClickListener(view -> onItemClick.itemClick(film.getId()));
+            itemView.setOnClickListener(view ->
+                    onItemClick.itemClick(film.getId()));
 
             }
         }

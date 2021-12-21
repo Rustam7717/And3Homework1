@@ -85,7 +85,9 @@ public class FilmsFragment extends Fragment {
             public void itemClick(String position){
                 Bundle bundle = new Bundle();
                 bundle.putString("Key",position);
-                Navigation.findNavController(requireView()).navigate(R.id.filmDetailFragment, bundle);
+                Navigation.findNavController(requireView()).navigate(R.id.action_filmsFragment_to_filmDetailFragment
+                        , bundle);
+                Log.e("tag", position);
 
             }
         });
